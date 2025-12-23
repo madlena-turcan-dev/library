@@ -1,0 +1,26 @@
+@use 'abstracts/variables' as vars;
+@use 'abstracts/mixins' as mixins;
+@use 'abstracts/placeholders' as placeholders;
+
+nav {
+  @include mixins.display-flex(row, center, space-between, 2rem);
+  height: 5rem;
+
+  .nav-left {
+    @include mixins.display-flex(row, center, flex-start, 1rem);
+  }
+
+  .link-wrapper {
+    @include mixins.display-flex(row, center, 1.5rem);
+
+    a {
+      margin-right: 2rem;
+
+      &:hover,
+      :active {
+        color: vars.$color-primary;
+        cursor: pointer;
+      }
+    }
+  }
+}
